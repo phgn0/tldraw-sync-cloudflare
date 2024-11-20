@@ -10,6 +10,7 @@
 	"license": "Apache-2.0",
 	"type": "module",
 	"scripts": {
+		"postinstall": "patch-package",
 		"dev": "concurrently --kill-others --names client,worker --prefix-colors blue,red yarn:dev:client yarn:dev:worker",
 		"dev:client": "vite",
 		"dev:worker": "wrangler dev",
@@ -30,6 +31,7 @@
 		"tldraw": "3.0.3"
 	},
 	"devDependencies": {
+		"@cloudflare/workers-types": "^4.20240909.0",
 		"@types/lodash.throttle": "^4",
 		"@types/react": "^18.0.37",
 		"@types/react-dom": "^18.0.11",
@@ -40,6 +42,9 @@
 		"eslint": "^8.38.0",
 		"eslint-plugin-react-hooks": "^4.6.0",
 		"eslint-plugin-react-refresh": "^0.3.4",
+		"patch-package": "^8.0.0",
+		"prettier": "^3.3.3",
+		"prettier-plugin-organize-imports": "^4.0.0",
 		"typescript": "^5.0.2",
 		"vite": "^5.4.2",
 		"wrangler": "^3.64.0"

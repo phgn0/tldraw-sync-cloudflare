@@ -1,0 +1,71 @@
+diff --git a/node_modules/@tldraw/utils/dist-cjs/lib/version.js b/node_modules/@tldraw/utils/dist-cjs/lib/version.js
+index 63864eb..d844e94 100644
+--- a/node_modules/@tldraw/utils/dist-cjs/lib/version.js
++++ b/node_modules/@tldraw/utils/dist-cjs/lib/version.js
+@@ -58,12 +58,12 @@ function registerTldrawLibraryVersion(name, version, modules) {
+   }
+   const info = getLibraryVersions();
+   info.versions.push({ name, version, modules });
+-  if (!info.scheduledNotice) {
+-    info.scheduledNotice = setTimeout(() => {
+-      info.scheduledNotice = null;
+-      checkLibraryVersions(info);
+-    }, 100);
+-  }
++  // if (!info.scheduledNotice) {
++  //   info.scheduledNotice = setTimeout(() => {
++  //     info.scheduledNotice = null;
++  //     checkLibraryVersions(info);
++  //   }, 100);
++  // }
+ }
+ function checkLibraryVersions(info) {
+   if (!info.versions.length) return;
+diff --git a/node_modules/@tldraw/utils/dist-esm/lib/version.mjs b/node_modules/@tldraw/utils/dist-esm/lib/version.mjs
+index 2a7b68f..d0dfd54 100644
+--- a/node_modules/@tldraw/utils/dist-esm/lib/version.mjs
++++ b/node_modules/@tldraw/utils/dist-esm/lib/version.mjs
+@@ -34,12 +34,12 @@ function registerTldrawLibraryVersion(name, version, modules) {
+   }
+   const info = getLibraryVersions();
+   info.versions.push({ name, version, modules });
+-  if (!info.scheduledNotice) {
+-    info.scheduledNotice = setTimeout(() => {
+-      info.scheduledNotice = null;
+-      checkLibraryVersions(info);
+-    }, 100);
+-  }
++  // if (!info.scheduledNotice) {
++  //   info.scheduledNotice = setTimeout(() => {
++  //     info.scheduledNotice = null;
++  //     checkLibraryVersions(info);
++  //   }, 100);
++  // }
+ }
+ function checkLibraryVersions(info) {
+   if (!info.versions.length) return;
+diff --git a/node_modules/@tldraw/utils/src/lib/version.ts b/node_modules/@tldraw/utils/src/lib/version.ts
+index 9e71e51..56f0ead 100644
+--- a/node_modules/@tldraw/utils/src/lib/version.ts
++++ b/node_modules/@tldraw/utils/src/lib/version.ts
+@@ -60,13 +60,13 @@ export function registerTldrawLibraryVersion(name?: string, version?: string, mo
+ 	const info = getLibraryVersions()
+ 	info.versions.push({ name, version, modules })
+ 
+-	if (!info.scheduledNotice) {
+-		// eslint-disable-next-line no-restricted-globals
+-		info.scheduledNotice = setTimeout(() => {
+-			info.scheduledNotice = null
+-			checkLibraryVersions(info)
+-		}, 100)
+-	}
++	// if (!info.scheduledNotice) {
++	// 	// eslint-disable-next-line no-restricted-globals
++	// 	info.scheduledNotice = setTimeout(() => {
++	// 		info.scheduledNotice = null
++	// 		checkLibraryVersions(info)
++	// 	}, 100)
++	// }
+ }
+ 
+ function checkLibraryVersions(info: TldrawLibraryVersionInfo) {
